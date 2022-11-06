@@ -1,4 +1,5 @@
 <script async script lang="ts">
+    import { base } from '$app/paths';
     import TopAppBar, { Row, Section, Title } from '@smui/top-app-bar';
     import Button, { Label } from '@smui/button';
 </script>
@@ -25,7 +26,7 @@
 <TopAppBar variant="static">
     <Row>
         <Section>
-            <Title>Svelte Form Sample</Title>
+            <Title><Button href={`${base}/`}>Svelte Form Sample</Button></Title>
         </Section>
         <Section align="end">
             <Button
