@@ -47,4 +47,10 @@
     :global(body) {
         margin: 0;
     }
+
+    :global(main) {
+        padding: 0.5rem;
+        margin: auto;
+        max-width: 800px;
+    }
 </style>
