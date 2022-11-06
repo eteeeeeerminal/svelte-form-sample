@@ -1,6 +1,8 @@
 import static_adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
+const production = process.env.NODE_ENV === 'production';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
@@ -8,7 +10,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: static_adapter({fallback: `200.html`})
+		adapter: static_adapter({fallback: `200.html`}),
+		paths: {
+			base: production ? '/svelte-form-sample' : '',
+		},
 	}
 };
 
