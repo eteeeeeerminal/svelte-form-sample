@@ -15,7 +15,7 @@
 		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/chunks/index-72d24d0f.js">
 		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/modules/pages/_layout.ts-b8ee4d7c.js">
 		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/chunks/_layout-1daba58d.js">
-		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/components/pages/smui-only-refactored/_page.svelte-ef21fb85.js">
+		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/components/pages/smui-felte/_page.svelte-2c97f7e2.js">
 		<link rel="modulepreload" href="/svelte-form-sample/_app/immutable/chunks/Checkbox-9d74f422.js"><!-- HEAD_svelte-rg5t7b_START --><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/svelte-material-ui@6.0.0/bare.min.css"><!-- HEAD_svelte-rg5t7b_END -->
 	</head>
 	<body>
@@ -35,31 +35,41 @@
 </div>
 </header>
 
-<main><h2>Svelte Material UI のサンプル</h2>
-<p>Svelte Material UI だけで作るとこんな感じ。</p>
+<main><h2>SMUI + Felte のサンプル</h2>
+<p>Svelte Material UI で入力された値を Felte に流し込む。</p>
+<h4>初期値</h4>
+<pre>{
+  "textbox": "最初に入ってるやつ",
+  "select": "ぴよ",
+  "radio": "Svelte",
+  "checkbox": [
+    "",
+    "buzz"
+  ]
+}</pre>
 
-<form><label class="mdc-text-field smui-text-field--standard" style="">
-      <span class="mdc-floating-label" style="">プレースホルダー</span>
+<form><div role="textbox"><label class="mdc-text-field smui-text-field--standard mdc-text-field--label-floating" style="">
+      <span class="mdc-floating-label mdc-floating-label--float-above" style="">プレースホルダー</span>
     
     
     
     
       
-      <input class="mdc-text-field__input" type="text" placeholder=" " value="">
+      <input class="mdc-text-field__input" type="text" placeholder=" " value="最初に入ってるやつ">
       
       
     
     <div class="mdc-line-ripple" style=""></div></label>
-<div class="mdc-text-field-helper-line"><div class="mdc-text-field-helper-text" aria-hidden="true" id="SMUI-textfield-helper-text-1" slot="helper">細かい説明
+<div class="mdc-text-field-helper-line"><div class="mdc-text-field-helper-text" aria-hidden="true" id="SMUI-textfield-helper-text-0" slot="helper">細かい説明
 </div>
 </div>
-<p>入力しているテキスト: </p>
-    <div class="mdc-select smui-select--standard" style="">
+    <p>入力しているテキスト: 最初に入ってるやつ</p></div>
+    <div role="listbox" tabindex="0"><div class="mdc-select smui-select--standard" style="">
   <div class="mdc-select__anchor">
-    <label class="mdc-floating-label" style="" id="SMUI-select-1-smui-label">選んでね</label>
+    <label class="mdc-floating-label" style="" id="SMUI-select-0-smui-label">選んでね</label>
     
     
-    <span class="mdc-select__selected-text-container"><span id="SMUI-select-1-smui-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox" aria-labelledby="SMUI-select-1-smui-label"></span></span>
+    <span class="mdc-select__selected-text-container"><span id="SMUI-select-0-smui-selected-text" class="mdc-select__selected-text" role="button" aria-haspopup="listbox" aria-labelledby="SMUI-select-0-smui-label"></span></span>
     <span class="mdc-select__dropdown-icon"><svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5" focusable="false"><polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon><polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon></svg></span>
     <div class="mdc-line-ripple" style=""></div></div>
 
@@ -67,67 +77,79 @@
 
 <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth" style=""><ul class="mdc-deprecated-list" role="listbox"><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="" value=""><span class="mdc-deprecated-list-item__ripple"></span>
 </li>
-    <li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="ほげ" value="ほげ"><span class="mdc-deprecated-list-item__ripple"></span>ほげ
+        <li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="ほげ" value="ほげ"><span class="mdc-deprecated-list-item__ripple"></span>ほげ
 </li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="ふが" value="ふが"><span class="mdc-deprecated-list-item__ripple"></span>ふが
-</li><li class="mdc-deprecated-list-item" style="" role="option" aria-selected="false" aria-disabled="false" tabindex="-1" data-value="ぴよ" value="ぴよ"><span class="mdc-deprecated-list-item__ripple"></span>ぴよ
+</li><li class="mdc-deprecated-list-item mdc-deprecated-list-item--selected" style="" role="option" aria-selected="true" aria-disabled="false" tabindex="0" data-value="ぴよ" value="ぴよ"><span class="mdc-deprecated-list-item__ripple"></span>ぴよ
 </li>
 </ul>
 </div></div>
 
-<p>選択された要素: </p>
-    <div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-5" value="Vue">
+    <p>選択された要素: ぴよ</p></div>
+    
+<div role="radio" aria-checked="mixed" tabindex="0"><div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-0" value="Vue">
   <div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div>
     <div class="mdc-radio__inner-circle"></div></div>
   <div class="mdc-radio__ripple"></div>
 </div>
+            
         
-    
-  <label for="SMUI-form-field-5"><span slot="label">Vue</span></label>
-</div><div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-6" value="React">
+  <label for="SMUI-form-field-0"><span slot="label">Vue</span></label>
+</div><div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-1" value="React">
   <div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div>
     <div class="mdc-radio__inner-circle"></div></div>
   <div class="mdc-radio__ripple"></div>
 </div>
+            
         
-    
-  <label for="SMUI-form-field-6"><span slot="label">React</span></label>
-</div><div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-7" value="Svelte">
+  <label for="SMUI-form-field-1"><span slot="label">React</span></label>
+</div><div class="mdc-form-field"><div class="mdc-radio" style=""><input class="mdc-radio__native-control" type="radio" id="SMUI-form-field-2" value="Svelte" checked>
   <div class="mdc-radio__background"><div class="mdc-radio__outer-circle"></div>
     <div class="mdc-radio__inner-circle"></div></div>
   <div class="mdc-radio__ripple"></div>
 </div>
+            
         
-    
-  <label for="SMUI-form-field-7"><span slot="label">Svelte</span></label>
+  <label for="SMUI-form-field-2"><span slot="label">Svelte</span></label>
 </div>
-<p>選択された要素: </p>
-    <div class="mdc-form-field"><div class="mdc-checkbox" style=""><input class="mdc-checkbox__native-control" type="checkbox" id="SMUI-form-field-8" value="fizz">
+    <p>選択された要素: Svelte</p></div>
+    
+<div role="checkbox" tabindex="0"><div role="checkbox" aria-checked="true" tabindex="0"><div class="mdc-form-field"><div class="mdc-checkbox" style=""><input class="mdc-checkbox__native-control" type="checkbox" id="SMUI-form-field-3" value="fizz">
   <div class="mdc-checkbox__background"><svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path></svg>
     <div class="mdc-checkbox__mixedmark"></div></div>
   <div class="mdc-checkbox__ripple"></div>
 </div>
-        
-    
-  <label for="SMUI-form-field-8"><span slot="label">fizz</span></label>
-</div><div class="mdc-form-field"><div class="mdc-checkbox" style=""><input class="mdc-checkbox__native-control" type="checkbox" id="SMUI-form-field-9" value="buzz">
+  <label for="SMUI-form-field-3"><span slot="label">fizz</span></label>
+</div>
+    <p>選択された要素: </p></div>
+        <br><div role="checkbox" aria-checked="true" tabindex="0"><div class="mdc-form-field"><div class="mdc-checkbox" style=""><input class="mdc-checkbox__native-control" type="checkbox" id="SMUI-form-field-4" value="buzz" checked>
   <div class="mdc-checkbox__background"><svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24"><path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path></svg>
     <div class="mdc-checkbox__mixedmark"></div></div>
   <div class="mdc-checkbox__ripple"></div>
 </div>
-        
-    
-  <label for="SMUI-form-field-9"><span slot="label">buzz</span></label>
+  <label for="SMUI-form-field-4"><span slot="label">buzz</span></label>
 </div>
-<p>選択された要素: </p>
+    <p>選択された要素: buzz</p></div>
+        <br></div>
 
     <button class="mdc-button mdc-button--raised" style="" type="button"><div class="mdc-button__ripple"></div>
   <span class="mdc-button__label">送信</span></button></form>
+
+<h3>現在入力されている値</h3>
+<pre>{
+  "textbox": "最初に入ってるやつ",
+  "select": "ぴよ",
+  "radio": "Svelte",
+  "checkbox": [
+    "",
+    "buzz"
+  ]
+}</pre>
 
 
 </main>
 
 
-		<script type="module" data-sveltekit-hydrate="1l0nh92">
+		<script type="module" data-sveltekit-hydrate="1cwff12">
 			import { start } from "/svelte-form-sample/_app/immutable/start-7dfe3fe1.js";
 
 			start({
@@ -135,14 +157,14 @@
 				hydrate: {
 					status: 200,
 					error: null,
-					node_ids: [0, 5],
+					node_ids: [0, 3],
 					params: {},
-					route: {"id":"/smui-only-refactored"},
+					route: {"id":"/smui-felte"},
 					data: [null,null],
 					form: null
 				},
 				paths: {"base":"/svelte-form-sample","assets":"/svelte-form-sample"},
-				target: document.querySelector('[data-sveltekit-hydrate="1l0nh92"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="1cwff12"]').parentNode,
 				trailing_slash: "never"
 			});
 		</script>
