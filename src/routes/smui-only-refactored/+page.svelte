@@ -14,8 +14,8 @@
     const radioOptions = [
         "Vue", "React", "Svelte"
     ];
-    let checkboxChecked: string[] = [];
-    const checkboxOptions = [
+    let checkBoxChecked: string[] = [];
+    const checkBoxOptions = [
         "fizz", "buzz"
     ];
 
@@ -25,7 +25,7 @@
             textValue,
             selectSelected,
             radioSelected,
-            checkboxChecked
+            checkboxChecked: checkBoxChecked
         }
     };
 </script>
@@ -37,7 +37,7 @@
     <TextField bind:textValue />
     <Select bind:selectSelected {selectOptions} />
     <Radio bind:radioSelected {radioOptions} />
-    <CheckBox bind:checkboxChecked {checkboxOptions} />
+    <CheckBox bind:checkBoxChecked {checkBoxOptions} />
 
     <Button color="primary" variant="raised" type="button" on:click={onSubmit}>
         <Label>送信</Label>
