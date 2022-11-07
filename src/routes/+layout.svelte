@@ -20,7 +20,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto+Mono"
     />
-    <link rel="stylesheet" href="node_modules/svelte-material-ui/bare.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/svelte-material-ui@6.0.0/bare.min.css"
+    />
 </svelte:head>
 
 <TopAppBar variant="static">
