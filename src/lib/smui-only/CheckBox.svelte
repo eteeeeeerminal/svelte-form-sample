@@ -2,15 +2,15 @@
     import FormField from '@smui/form-field';
     import CheckBox from '@smui/checkbox';
 
-    export let checkboxChecked: string[];
-    export let checkboxOptions: string[];
+    export let checkBoxChecked: string[];
+    export let checkBoxOptions: string[];
 </script>
 
-{#each checkboxOptions as value}
+{#each checkBoxOptions as value}
     <FormField>
-        <CheckBox bind:group={checkboxChecked} {value} />
+        <CheckBox bind:group={checkBoxChecked} {value} />
         <span slot="label">{value}</span>
     </FormField>
 {/each}
-<p>選択された要素: {checkboxChecked}</p>
+<p>選択された要素: {checkBoxChecked}</p>
 

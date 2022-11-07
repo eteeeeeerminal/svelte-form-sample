@@ -16,8 +16,8 @@
     const radioOptions = [
         "Vue", "React", "Svelte"
     ];
-    let checkboxChecked: string[] = [];
-    const checkboxOptions = [
+    let checkBoxChecked: string[] = [];
+    const checkBoxOptions = [
         "fizz", "buzz"
     ];
 
@@ -27,7 +27,7 @@
             textValue,
             selectSelected,
             radioSelected,
-            checkboxChecked
+            checkBoxChecked
         }
     };
 </script>
@@ -57,13 +57,13 @@
     {/each}
     <p>選択された要素: {radioSelected}</p>
 
-    {#each checkboxOptions as value}
+    {#each checkBoxOptions as value}
         <FormField>
-            <CheckBox bind:group={checkboxChecked} {value} />
+            <CheckBox bind:group={checkBoxChecked} {value} />
             <span slot="label">{value}</span>
         </FormField>
     {/each}
-    <p>選択された要素: {checkboxChecked}</p>
+    <p>選択された要素: {checkBoxChecked}</p>
 
     <Button color="primary" variant="raised" type="button" on:click={onSubmit}>
         <Label>送信</Label>
