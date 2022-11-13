@@ -7,13 +7,13 @@
     export let checkBoxChecked: string;
     export let checkBoxOption: string;
 
-    const { field, onInput, onBlur } = createField(name);
+    const { field, onInput } = createField(name);
 
     let checked = checkBoxChecked ? [checkBoxChecked] : [];
     $: onInput(checked);
 </script>
 
-<div use:field on:blur={onBlur} role="checkbox" aria-checked={Boolean(checked)} tabindex="0">
+<div use:field role="checkbox" aria-checked={Boolean(checked)} tabindex="0">
     <FormField>
         <CheckBox bind:group={checked} value={checkBoxOption} />
         <span slot="label">{checkBoxOption}</span>
