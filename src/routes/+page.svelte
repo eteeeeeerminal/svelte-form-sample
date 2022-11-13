@@ -13,4 +13,7 @@
     <li>
         <a href={`${base}/smui-felte`}>SMUI + Felte</a>
     </li>
+    <li>
+        <a href={`${base}/smui-felte-yup`}>SMUI + Felte + yup によるバリデーション</a>
+    </li>
 </ul>
